@@ -45,14 +45,14 @@ int main(int argc, char **argv){
 				break;
 			case '+':
 				if (cells[pointer] >= 256){
-					cells[pointer] = 0
+					cells[pointer] = 0;
 				}else{
 					cells[pointer]++;
 				}
 				break;
 			case '-':
 				if (cells[pointer] < 0){
-					cells[pointer] = 255
+					cells[pointer] = 255;
 				}else{
 					cells[pointer]++;
 				}
