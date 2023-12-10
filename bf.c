@@ -2,8 +2,6 @@
 #include<stdlib.h>
 #include<string.h>
 
-#define NUMOFCELLS 15000
-
 int sizeoffile(char *location);
 void fileerror();
 char *readfile(char *location);
@@ -17,7 +15,7 @@ int main(int argc, char **argv){
 	errorcheck(buffer);
 
 	int pointer = 0;
-	int cells[NUMOFCELLS] = {0};
+	int cells[255] = {0};
 
 	int currentinstruction = 0;
 	int totalinstructions = strlen(buffer);
@@ -30,32 +28,16 @@ int main(int argc, char **argv){
 				cells[pointer] = (int)getchar();
 				break;
 			case '>':
-				if (pointer > NUMOFCELLS - 1){
-					pointer = 0;
-				}else{
-					pointer++;
-				}
+				pointer++;
 				break;
 			case '<': 
-				if (pointer < 0){
-					pointer = NUMOFCELLS;
-				}else{
-					pointer--;
-				}
+				pointer--;
 				break;
 			case '+':
-				if (cells[pointer] >= 256){
-					cells[pointer] = 0;
-				}else{
-					cells[pointer]++;
-				}
+				cells[pointer]++;
 				break;
 			case '-':
-				if (cells[pointer] < 0){
-					cells[pointer] = 255;
-				}else{
-					cells[pointer]++;
-				}
+				cells[pointer]--;
 				break;
 			case '[':
 				if (cells[pointer] == 0){
@@ -134,7 +116,6 @@ char *strip(char *buf){
 	output[counter] = '\0';
         return output;	
 }
-
 void errorcheck(char *buf){
 	int totalbraces = 0;
 	for (int i = 0; i < strlen(buf); i++){
@@ -152,4 +133,3 @@ void errorcheck(char *buf){
 		exit(3);
 	}
 }
-
