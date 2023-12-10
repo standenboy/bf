@@ -1,2 +1,2 @@
 # bf
-A brainf*ck interpriter writen in C
+A brainf*ck interpreter writen in C
