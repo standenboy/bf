@@ -2,6 +2,8 @@
 #include<stdlib.h>
 #include<string.h>
 
+#include "config.h"
+
 int sizeoffile(char *location);
 void fileerror();
 char *readfile(char *location);
@@ -15,7 +17,7 @@ int main(int argc, char **argv){
 	errorcheck(buffer);
 
 	int pointer = 0;
-	int cells[255] = {0};
+	int cells[MAXCELLS] = {0};
 
 	int currentinstruction = 0;
 	int totalinstructions = strlen(buffer);
@@ -116,6 +118,7 @@ char *strip(char *buf){
 	output[counter] = '\0';
         return output;	
 }
+
 void errorcheck(char *buf){
 	int totalbraces = 0;
 	for (int i = 0; i < strlen(buf); i++){
