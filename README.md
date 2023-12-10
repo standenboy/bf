@@ -15,7 +15,7 @@ to run a brainf*ck file, the user just needs to say
 
 `bf file.bf` *.bf extention is optional*
 
-# removal
+# Removal
 the user can use 
 
 `make uninstall` to remove the program from /usr/local/bin
