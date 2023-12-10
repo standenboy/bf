@@ -2,7 +2,7 @@
 A simple brainf*ck interpreter writen in C
 
 # Wrapping
-Wrapping is a feature that some brainf*uck interpreters have, however i have chosen to omit it, the user will probably never user more than 20 cells anyway
+Wrapping is a feature that some brainf*ck interpreters have, however i have chosen to omit it, the user will probably never user more than 20 cells anyway
 
 # Int size
 unlike some versions of bf, i have chosen to allow any standard int to be in a cell rather than just 0-255
